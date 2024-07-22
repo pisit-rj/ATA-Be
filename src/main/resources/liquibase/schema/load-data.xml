@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="load-data" author="pisit">
+
+        <loadData file="salary_survey-3.csv" separator="," tableName="salary_survey">
+
+            <column name="timestamp" type="VARCHAR(255)"/>
+            <column name="employer" type="VARCHAR(255)"/>
+            <column name="location" type="VARCHAR(255)"/>
+            <column name="job_title" type="VARCHAR(255)"/>
+            <column name="years_at_employer" type="VARCHAR(255)"/>
+            <column name="years_of_experience" type="VARCHAR(255)"/>
+            <column name="salary" type="VARCHAR(255)"/>
+            <column name="signing_bonus" type="VARCHAR(255)"/>
+            <column name="annual_bonus" type="VARCHAR(255)"/>
+            <column name="annual_stock_value" type="VARCHAR(255)"/>
+            <column name="gender" type="VARCHAR(20)"/>
+            <column name="additional_comments" type="VARCHAR(1000)"/>
+        </loadData>
+<!--        <loadData-->
+<!--            file="../data/salary_survey-3.json"-->
+<!--            tableName="salary_survey"-->
+<!--            quotchar='"'-->
+<!--            relativeToChangelogFile="true">-->
+<!--&lt;!&ndash;            format="json">&ndash;&gt;-->
+
+<!--            <column name="timestamp" type="DATETIME"/>-->
+<!--            <column name="employer" type="VARCHAR(255)"/>-->
+<!--            <column name="location" type="VARCHAR(255)"/>-->
+<!--            <column name="job_title" type="VARCHAR(255)"/>-->
+<!--            <column name="years_at_employer" type="INTEGER"/>-->
+<!--            <column name="years_of_experience" type="INTEGER"/>-->
+<!--            <column name="salary" type="DECIMAL(10,2)"/>-->
+<!--            <column name="signing_bonus" type="DECIMAL(10,2)"/>-->
+<!--            <column name="annual_bonus" type="DECIMAL(10,2)"/>-->
+<!--            <column name="annual_stock_value" type="VARCHAR(255)"/>-->
+<!--            <column name="gender" type="VARCHAR(20)"/>-->
+<!--            <column name="additional_comments" type="VARCHAR(1000)"/>-->
+<!--        </loadData>-->
+    </changeSet>
+
+</databaseChangeLog>
