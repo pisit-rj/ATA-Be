@@ -37,7 +37,24 @@ public class SearchJobDataRepository extends QuerydslRepositorySupport {
         BooleanBuilder booleanBuilder = new BooleanBuilder();
         Optional.ofNullable(jobDataRequest.getJobTitle()).ifPresent(item -> booleanBuilder.and(salarySurveyEntity.jobTitle.contains(item)));
         Optional.ofNullable(jobDataRequest.getGender()).ifPresent(item -> booleanBuilder.and(salarySurveyEntity.gender.contains(item)));
-        Optional.ofNullable(jobDataRequest.getSalary()).ifPresent(item -> booleanBuilder.and(salarySurveyEntity.salary.goe(item)));
+
+        switch (jobDataRequest.getSalaryOperator()) {
+            case GT:
+                Optional.ofNullable(jobDataRequest.getSalary()).ifPresent(item -> booleanBuilder.and(salarySurveyEntity.salary.gt(item)));
+                break;
+            case GOE:
+                Optional.ofNullable(jobDataRequest.getSalary()).ifPresent(item -> booleanBuilder.and(salarySurveyEntity.salary.goe(item)));
+                break;
+            case LT:
+                Optional.ofNullable(jobDataRequest.getSalary()).ifPresent(item -> booleanBuilder.and(salarySurveyEntity.salary.lt(item)));
+                break;
+            case LOE:
+                Optional.ofNullable(jobDataRequest.getSalary()).ifPresent(item -> booleanBuilder.and(salarySurveyEntity.salary.loe(item)));
+                break;
+            default:
+                Optional.ofNullable(jobDataRequest.getSalary()).ifPresent(item -> booleanBuilder.and(salarySurveyEntity.salary.contains(item)));
+                break;
+        }
 
 
         Expression<?>[] selectedFiled = getSelectedFiled(jobDataRequest.getField());

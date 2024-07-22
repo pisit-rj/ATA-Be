@@ -11,5 +11,5 @@ public class JobDataRequest implements Serializable {
     private String gender;
     private String jobTitle;
     private String salary;
-    private String salaryOperator;
+    private SalaryOperatorEnum salaryOperator;
 }
