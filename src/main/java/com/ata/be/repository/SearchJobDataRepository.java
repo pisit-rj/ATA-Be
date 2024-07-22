@@ -36,7 +36,7 @@ public class SearchJobDataRepository extends QuerydslRepositorySupport {
 
         BooleanBuilder booleanBuilder = new BooleanBuilder();
         Optional.ofNullable(jobDataRequest.getJobTitle()).ifPresent(item -> booleanBuilder.and(salarySurveyEntity.jobTitle.contains(item)));
-        Optional.ofNullable(jobDataRequest.getGender()).ifPresent(item -> booleanBuilder.and(salarySurveyEntity.gender.contains(item)));
+        Optional.ofNullable(jobDataRequest.getGender()).ifPresent(item -> booleanBuilder.and(salarySurveyEntity.gender.eq(item)));
 
         switch (jobDataRequest.getSalaryOperator()) {
             case GT:
