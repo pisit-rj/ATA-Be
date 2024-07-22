@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="create-salary_survey-table" author="pisit">
+
+        <createTable tableName="salary_survey">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="timestamp" type="VARCHAR(255)"/>
+            <column name="employer" type="VARCHAR(255)"/>
+            <column name="location" type="VARCHAR(255)"/>
+            <column name="job_title" type="VARCHAR(255)"/>
+            <column name="years_at_employer" type="VARCHAR(255)"/>
+            <column name="years_of_experience" type="VARCHAR(255)"/>
+            <column name="salary" type="VARCHAR(255)"/>
+            <column name="signing_bonus" type="VARCHAR(255)"/>
+            <column name="annual_bonus" type="VARCHAR(255)"/>
+            <column name="annual_stock_value" type="VARCHAR(255)"/>
+            <column name="gender" type="VARCHAR(255)"/>
+            <column name="additional_comments" type="VARCHAR(1000)"/>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>
