@@ -1,0 +1,77 @@
+{
+	"info": {
+		"_postman_id": "00b35420-d5b4-4a12-a0ae-bdd57b2fbd4b",
+		"name": "ATA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36619250"
+	},
+	"item": [
+		{
+			"name": "searchJobData",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/jobData",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"jobData"
+					],
+					"query": [
+						{
+							"key": "field",
+							"value": "employer,test,salary,jobTitle",
+							"description": "input field name to be shown",
+							"disabled": true
+						},
+						{
+							"key": "jobTitle",
+							"value": "dev",
+							"description": "filter field",
+							"disabled": true
+						},
+						{
+							"key": "gender",
+							"value": "male",
+							"description": "filter field",
+							"disabled": true
+						},
+						{
+							"key": "salary",
+							"value": "100000",
+							"description": "filter field",
+							"disabled": true
+						},
+						{
+							"key": "SalaryOperator",
+							"value": "GT",
+							"description": "Enum class GT, LT, GOE, LOE to determine how to filter by salary",
+							"disabled": true
+						},
+						{
+							"key": "sort",
+							"value": "salary,id,desc",
+							"disabled": true
+						},
+						{
+							"key": "size",
+							"value": "50",
+							"description": "Specifies how many results should be included in each page.",
+							"disabled": true
+						},
+						{
+							"key": "page",
+							"value": "0",
+							"description": "Indicates which page of results to retrieve (starting from 0 for the first page).",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
